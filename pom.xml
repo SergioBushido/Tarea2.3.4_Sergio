@@ -17,37 +17,41 @@
         <java.version>17</java.version>
     </properties>
     <dependencies>
+        <!-- Proporciona las herramientas necesarias para crear APIs REST con Spring, incluyendo la serialización de objetos a JSON/XML y viceversa -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-rest</artifactId>
         </dependency>
+        <!-- Incluye funcionalidades básicas de Spring MVC, permitiendo el desarrollo de aplicaciones web y servicios RESTful -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
+        <!-- Proporciona herramientas de desarrollo rápido para Spring Boot, como el reinicio automático de la aplicación al detectar cambios en el código -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
             <optional>true</optional>
         </dependency>
+        <!-- Librería que simplifica la escritura de código Java al permitir anotaciones que automáticamente generan código repetitivo en tiempo de compilación -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+        <!-- Proporciona herramientas de testing para aplicaciones Spring Boot, incluyendo integración con JUnit, Mockito, Hamcrest y otros -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
-	     <dependency>
-		    <groupId>org.springdoc</groupId>
-		    <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-		    <version>2.3.0</version>
-		</dependency>
+        <!-- Añade soporte para OpenAPI 3, permitiendo la generación automática de documentación para las APIs REST, así como una interfaz de usuario para interactuar con ellas -->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>2.3.0</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -57,6 +61,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <excludes>
+                        <!-- Excluye lombok del artefacto final para evitar la inclusión de lombok en el JAR/WAR, ya que solo se necesita durante la compilación -->
                         <exclude>
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>
@@ -68,3 +73,4 @@
     </build>
 
 </project>
+
